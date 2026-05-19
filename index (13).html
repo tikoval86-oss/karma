@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подбор даты — Мухурта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Forum&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige:        #FAF3EA;
+    --beige-soft:   #F4EADD;
+    --plum:         #2A0E26;
+    --cream:        #F5EDE4;
+    --gold:         #C8A96B;
+    --gold-deep:    #9A7A38;
+    --line:         rgba(42, 14, 38, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Forum', Georgia, serif;
+    background: var(--beige);
+    color: var(--plum);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+
+  /* HERO SECTION */
+  .hero { padding: 100px 0 60px; text-align: center; }
+  .price-kicker {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+    display: block;
+  }
+  h1 { 
+    font-size: clamp(38px, 6vw, 72px); 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    margin-bottom: 30px;
+  }
+  .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 32px);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.3;
+  }
+
+  .gold-divider {
+    display: flex; align-items: center; justify-content: center; gap: 15px; margin: 40px 0;
+  }
+  .gold-divider .line { width: 60px; height: 1px; background: var(--gold); }
+  .gold-divider .diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+
+  /* CONTENT SECTIONS */
+  .section { padding: 80px 0; }
+  .bg-soft { background: var(--beige-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .label {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 14px;
+    color: var(--gold-deep);
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+  }
+
+  h2 { font-size: 36px; text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+
+  /* LIST STYLES */
+  .events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .event-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 18px;
+  }
+
+  /* WHY SECTION */
+  .flex-box { display: flex; gap: 40px; margin-top: 40px; }
+  .info-card {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .info-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--gold-deep); }
+  .info-card b { color: var(--plum); }
+
+  /* MAGIC SECTION (ACCORDION STYLE) */
+  .magic-block {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--plum);
+    color: var(--cream);
+    padding: 60px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .magic-block p { font-size: 20px; margin-bottom: 20px; font-family: 'Cormorant Garamond'; italic; }
+
+  /* RESULTS SECTION */
+  .results-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 40px auto;
+  }
+  .results-list li {
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 19px;
+  }
+  .results-list li::before {
+    content: "✧";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 24px;
+  }
+
+  /* BUTTON */
+  .cta-wrap { text-align: center; margin-top: 50px; }
+  .btn-gold {
+    display: inline-block;
+    padding: 22px 50px;
+    background: var(--plum);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: 0.4s;
+    border: 1px solid var(--gold);
+  }
+  .btn-gold:hover {
+    background: var(--gold);
+    color: var(--plum);
+  }
+
+  @media (max-width: 768px) {
+    .events-grid, .flex-box { grid-template-columns: 1fr; flex-direction: column; }
+    .magic-block { padding: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero wrap">
+  <span class="price-kicker">Подбор даты · 70 €</span>
+  <p class="quote">«Как корабль назовёшь — <br>так он и поплывёт.»</p>
+  <h1>Мухурта</h1>
+  <div class="gold-divider">
+    <span class="line"></span>
+    <span class="diamond"></span>
+    <span class="line"></span>
+  </div>
+  <p style="max-width: 700px; margin: 0 auto; font-size: 18px;">
+    В астрологии это работает буквально. Важное начало — это не просто действие. Это запуск событийной линии. И момент запуска — задаёт сценарий дальше.
+  </p>
+</section>
+
+<section class="section bg-soft">
+  <div class="wrap">
+    <span class="label">— Какие события —</span>
+    <h2 style="text-align: center;">Любое начало, которое задаёт сценарий на месяцы и годы вперёд:</h2>
+    
+    <div class="events-grid">
+      <div class="event-item">Свадьба, помолвка, регистрация</div>
+      <div class="event-item">Открытие бизнеса, запуск или перезапуск</div>
+      <div class="event-item">Покупка недвижимости</div>
+      <div class="event-item">Строительство дома</div>
+      <div class="event-item">Подписание важных договоров</div>
+      <div class="event-item">Переезд</div>
+      <div class="event-item">Старт большого проекта</div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <span class="label">— Почему дата важна —</span>
+  <div class="flex-box">
+    <div class="info-card">
+      <h3>Хороший момент — <b>попутный ветер</b></h3>
+      <p>Старт идёт легче. Препятствий меньше. Энергия события — на вашей стороне. Вы не ломитесь через стену. Двери открываются.</p>
+    </div>
+    <div class="info-card">
+      <h3>Неудачный момент — <b>встречный</b></h3>
+      <p>Препятствия там, где их могло не быть. Идея сильная — а всё буксует. Сил уходит в три раза больше. И вы потом долго не понимаете — почему.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="magic-block">
+      <p>✦ «Это что — магия? Подобрала дату — и всё пойдёт само?»</p>
+      <div style="font-size: 24px; margin: 20px 0; text-transform: uppercase; letter-spacing: 0.1em;">Нет.</div>
+      <p style="opacity: 0.9;">
+        Базовая карма никуда не исчезает. Хорошая дата — не «всё само пойдёт».<br><br>
+        Но она помогает не усложнять путь. Не добавлять лишних узлов туда, где и без того нужен ресурс.
+      </p>
+      <p style="margin-top: 20px; color: var(--gold); font-weight: bold;">Это не магия. Это — попутный ветер вместо встречного.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="wrap">
+    <span class="label">— Что вы получаете —</span>
+    <ul class="results-list">
+      <li>2–3 благоприятные даты под ваше событие</li>
+      <li>Оптимальное время — окно для запуска</li>
+      <li>Рекомендации, что учесть в этот день</li>
+      <li>Честный ответ: можно ли подобрать дату в нужном вам периоде — или лучше сдвинуть</li>
+    </ul>
+
+    <div class="cta-wrap">
+      <p style="font-family: 'Cormorant Garamond'; italic; font-size: 24px; margin-bottom: 30px;">Зову ту, у кого впереди — важное начало.</p>
+      <a href="#" class="btn-gold">Заказать подбор даты</a>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 60px 0; text-align: center; opacity: 0.6; font-size: 14px; letter-spacing: 0.1em;">
+  <p>ВЕДИЧЕСКАЯ АСТРОЛОГИЯ ДЛЯ ЖИЗНИ</p>
+</footer>
+
+</body>
+</html>
